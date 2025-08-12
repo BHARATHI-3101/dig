@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="webcal.css">
+</head>
+<body>
+    
+    
+    <center>
+        <input type="text" id="res" readonly> 
+        <table>
+            <tr>
+                <td><button onclick="append(7); playSound()">7</button></td>
+                <td><button onclick="append(8); playSound()">8</button></td>
+                <td><button onclick="append(9); playSound()">9</button></td>
+                <td><button onclick="operate('+'); playSound()">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="append(4); playSound()">4</button></td>
+                <td><button onclick="append(5); playSound()">5</button></td>
+                <td><button onclick="append(6); playSound()">6</button></td>
+                <td><button onclick="operate('-'); playSound()">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="append(1); playSound()">1</button></td>
+                <td><button onclick="append(2); playSound()">2</button></td>
+                <td><button onclick="append(3); playSound()">3</button></td>
+                <td><button onclick="operate('*'); playSound()">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="append(0); playSound()">0</button></td>
+                <td><button onclick="clearresult(); playSound()">C</button></td>
+                <td><button onclick="calculate(); playSound()">=</button></td>
+                <td><button onclick="operate('/'); playSound()">/</button></td>
+            </tr>
+        </table>
+    </center>
+    <body>
+    
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+
+
+    
+    <audio id="clickSound" src="button-press-382713.mp3" preload="auto"></audio>
+
+    <script src="webcal.js"></script>
+    <script>
+        function playSound() {
+            let sound = document.getElementById("clickSound");
+            sound.currentTime = 0; 
+            sound.play();
+        }
+    </script>
+</body>
+</html>
